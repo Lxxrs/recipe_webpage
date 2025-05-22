@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Zimt & Mortadella</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <h1>Willkommen auf Zimt & Mortadella</h1>
+    <h2>Hier finden Sie leckere vegane Kochrezepte</h2>
+    <div class="recipes">
+      <% recipes.forEach(recipe => { %>
+      <div class="recipe">
+        <h2><%= recipe.title %></h2>
+        <img src="<%= recipe.image %>" alt="<%= recipe.title %>" />
+        <p>Likes: <%= recipe.likes %>, Dislikes: <%= recipe.dislikes %></p>
+        <p>
+          Like-Verhältnis: <%= ((recipe.likes / (recipe.likes +
+          recipe.dislikes)) * 100).toFixed(2) %>%
+        </p>
+        <a href="/recipe/<%= recipe.id %>">Mehr erfahren</a>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+  <footer>
+    Inspired by
+    <a href="https://www.zuckerjagdwurst.com/de">Zucker & Jagdwurst</a>
+  </footer>
+</html>

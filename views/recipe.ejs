@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= recipe.title %></title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div id="recipe-container">
+      <h2><%= recipe.title %></h2>
+      <img src="<%= recipe.image %>" alt="<%= recipe.title %>" />
+      <p><%= recipe.content %></p>
+      <p>Likes: <%= recipe.likes %>, Dislikes: <%= recipe.dislikes %></p>
+      <p>Like-Verhältnis: <%= likePercentage.toFixed(2) %>%</p>
+      <button id="like-button">Like</button>
+      <button id="dislike-button">Dislike</button>
+    </div>
+    <h3>Kommentare</h3>
+    <div id="comments-container">
+      <!-- Kommentare werden hier dynamisch eingefügt -->
+    </div>
+    <form id="comment-form">
+      <input
+        type="text"
+        id="comment-input"
+        placeholder="Kommentar hinzufügen"
+        required
+      />
+      <button type="submit">Kommentar hinzufügen</button>
+    </form>
+    <script src="/js/recipe.js"></script>
+  </body>
+</html>
